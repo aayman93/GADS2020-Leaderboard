@@ -6,6 +6,7 @@
     app:startDestination="@id/splashFragment">
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.github.aayman93.gadsleaderboard.SplashFragment"
-        android:label="SplashFragment" />
+        android:name="com.github.aayman93.gadsleaderboard.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash" />
 </navigation>
