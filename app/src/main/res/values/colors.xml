@@ -7,4 +7,5 @@
     <color name="secondaryLightColor">#ffbd45</color>
     <color name="secondaryDarkColor">#c25e00</color>
     <color name="white">#ffffff</color>
+    <color name="grey">#B1B1AC</color>
 </resources>
