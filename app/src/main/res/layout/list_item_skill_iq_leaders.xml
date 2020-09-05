@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="skillIqLeader"
+            type="com.github.aayman93.gadsleaderboard.models.SkillIqLeader" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/skill_iq_badge"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:contentDescription="@string/skill_iq_badge_description"
+                app:badgeUrl="@{skillIqLeader.badgeUrl}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/skill_iq_badge" />
+
+            <TextView
+                android:id="@+id/skill_iq_leader_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@{skillIqLeader.name}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textColor="@color/primaryLightColor"
+                app:layout_constraintStart_toEndOf="@id/skill_iq_badge"
+                app:layout_constraintTop_toTopOf="@id/skill_iq_badge"
+                tools:text="Learner Name" />
+
+            <TextView
+                android:id="@+id/skill_iq_leader_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                app:layout_constraintBottom_toBottomOf="@+id/skill_iq_badge"
+                app:layout_constraintStart_toEndOf="@id/skill_iq_badge"
+                app:layout_constraintTop_toBottomOf="@id/skill_iq_leader_name"
+                app:skillIqScore="@{skillIqLeader}"
+                tools:text="Skill IQ score, Country Name" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

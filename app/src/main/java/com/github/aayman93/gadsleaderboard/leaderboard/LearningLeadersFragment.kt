@@ -6,6 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.github.aayman93.gadsleaderboard.R
+import com.github.aayman93.gadsleaderboard.leaderboard.adapters.LearningLeadersAdapter
+import com.github.aayman93.gadsleaderboard.models.Data
+import kotlinx.android.synthetic.main.fragment_learning_leaders.view.*
 
 class LearningLeadersFragment : Fragment() {
 
@@ -14,6 +17,13 @@ class LearningLeadersFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_learning_leaders, container, false)
+        val view = inflater.inflate(R.layout.fragment_learning_leaders, container, false)
+
+        val adapter = LearningLeadersAdapter()
+        view.learning_recycler_view.adapter = adapter
+
+        adapter.data = Data.learningLeaders.sortedByDescending { it.hours }
+
+        return view
     }
 }

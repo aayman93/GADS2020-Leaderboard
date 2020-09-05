@@ -3,4 +3,6 @@
     <string name="gads_logo_description">GADS logo</string>
     <string name="leader_board">Leaderboard</string>
     <string name="submit_button">Submit</string>
+    <string name="learning_badge_description">Learning badge</string>
+    <string name="skill_iq_badge_description">skill_iq_badge</string>
 </resources>

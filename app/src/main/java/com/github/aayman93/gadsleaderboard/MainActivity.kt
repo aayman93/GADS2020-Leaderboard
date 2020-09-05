@@ -1,8 +1,8 @@
 package com.github.aayman93.gadsleaderboard
 
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.core.view.WindowCompat
 
 class MainActivity : AppCompatActivity() {
@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupFullscreen() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
-        window.statusBarColor = Color.TRANSPARENT
-        window.navigationBarColor = Color.TRANSPARENT
+        window.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
     }
 }
