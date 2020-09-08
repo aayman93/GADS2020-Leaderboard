@@ -8,8 +8,12 @@ buildscript {
         constraint_layout_version = "2.0.1"
         kotlin_version = "1.4.0"
         navigation_version = "2.3.0"
-        material_version = "1.2.0"
+        material_version = "1.2.1"
         glide_version = "4.11.0"
+        lifecycle_version = "2.2.0"
+        moshi_version = "1.9.3"
+        retrofit_version = "2.9.0"
+        okhttp_version = "4.8.1"
     }
 
     repositories {

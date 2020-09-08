@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.github.aayman93.gadsleaderboard.R
+import androidx.lifecycle.ViewModelProvider
+import com.github.aayman93.gadsleaderboard.MainViewModel
+import com.github.aayman93.gadsleaderboard.databinding.FragmentSkillIqLeadersBinding
 import com.github.aayman93.gadsleaderboard.leaderboard.adapters.SkillIqLeadersAdapter
-import com.github.aayman93.gadsleaderboard.models.Data
-import kotlinx.android.synthetic.main.fragment_skill_iq_leaders.view.*
 
 class SkillIqLeadersFragment : Fragment() {
 
@@ -17,14 +17,14 @@ class SkillIqLeadersFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_skill_iq_leaders, container, false)
+        val binding = FragmentSkillIqLeadersBinding.inflate(inflater)
 
-        val adapter = SkillIqLeadersAdapter()
+        binding.lifecycleOwner = viewLifecycleOwner
 
-        view.skill_iq_recycler_view.adapter = adapter
+        binding.viewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
 
-        adapter.data = Data.skillIqLeaders.sortedByDescending { it.score }
+        binding.skillIqRecyclerView.adapter = SkillIqLeadersAdapter()
 
-        return view
+        return binding.root
     }
 }

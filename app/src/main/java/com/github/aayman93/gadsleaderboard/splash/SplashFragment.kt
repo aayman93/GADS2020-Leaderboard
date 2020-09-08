@@ -5,9 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.github.aayman93.gadsleaderboard.MainViewModel
 import com.github.aayman93.gadsleaderboard.R
-import kotlinx.android.synthetic.main.fragment_splash.view.*
 
 class SplashFragment : Fragment() {
 
@@ -18,11 +19,14 @@ class SplashFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_splash, container, false)
 
-        // Just a way to navigate to the leader board for now
-        view.gads_logo.setOnClickListener {
-            findNavController().navigate(R.id.action_splashFragment_to_leaderBoardFragment)
-        }
+        val viewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
 
+        viewModel.navigateToLeaderBoard.observe(viewLifecycleOwner, {shouldNavigate ->
+            if (shouldNavigate) {
+                findNavController().navigate(R.id.action_splashFragment_to_leaderBoardFragment)
+                viewModel.navigationToLeaderBoardDone()
+            }
+        })
         return view
     }
 }

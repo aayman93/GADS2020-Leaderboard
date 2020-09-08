@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.github.aayman93.gadsleaderboard.R
+import androidx.lifecycle.ViewModelProvider
+import com.github.aayman93.gadsleaderboard.MainViewModel
+import com.github.aayman93.gadsleaderboard.databinding.FragmentLearningLeadersBinding
 import com.github.aayman93.gadsleaderboard.leaderboard.adapters.LearningLeadersAdapter
-import com.github.aayman93.gadsleaderboard.models.Data
-import kotlinx.android.synthetic.main.fragment_learning_leaders.view.*
 
 class LearningLeadersFragment : Fragment() {
 
@@ -17,13 +17,14 @@ class LearningLeadersFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_learning_leaders, container, false)
+        val binding = FragmentLearningLeadersBinding.inflate(inflater)
 
-        val adapter = LearningLeadersAdapter()
-        view.learning_recycler_view.adapter = adapter
+        binding.lifecycleOwner = viewLifecycleOwner
 
-        adapter.data = Data.learningLeaders.sortedByDescending { it.hours }
+        binding.viewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
 
-        return view
+        binding.learningRecyclerView.adapter = LearningLeadersAdapter()
+
+        return binding.root
     }
 }

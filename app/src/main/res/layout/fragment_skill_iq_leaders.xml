@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/skill_iq_recycler_view"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/recycler_background_color"
-    android:clipToPadding="false"
-    android:padding="8dp"
-    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-    tools:itemCount="20"
-    tools:listitem="@layout/list_item_skill_iq_leaders" />
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.github.aayman93.gadsleaderboard.MainViewModel" />
+    </data>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/skill_iq_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/recycler_background_color"
+        android:clipToPadding="false"
+        android:padding="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:listData="@{viewModel.skillIqLeaders}"
+        tools:itemCount="20"
+        tools:listitem="@layout/list_item_skill_iq_leaders" />
+</layout>
