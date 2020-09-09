@@ -20,5 +20,17 @@
         android:id="@+id/leaderBoardFragment"
         android:name="com.github.aayman93.gadsleaderboard.leaderboard.LeaderBoardFragment"
         android:label="LeaderBoardFragment"
-        tools:layout="@layout/fragment_leader_board" />
+        tools:layout="@layout/fragment_leader_board" >
+        <action
+            android:id="@+id/action_leaderBoardFragment_to_submissionFragment"
+            app:destination="@id/nav_submission" />
+    </fragment>
+    <navigation android:id="@+id/nav_submission"
+        app:startDestination="@id/submissionFragment">
+        <fragment
+            android:id="@+id/submissionFragment"
+            android:name="com.github.aayman93.gadsleaderboard.submission.SubmissionFragment"
+            android:label="SubmissionFragment"
+            tools:layout="@layout/fragment_submission" />
+    </navigation>
 </navigation>

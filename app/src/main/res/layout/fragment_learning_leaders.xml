@@ -16,7 +16,7 @@
         android:layout_height="match_parent"
         android:background="@color/recycler_background_color"
         android:clipToPadding="false"
-        android:padding="8dp"
+        android:padding="@dimen/spacing_small"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:listData="@{viewModel.learningLeaders}"
         tools:itemCount="20"

@@ -20,4 +20,9 @@
         <item name="textAllCaps">false</item>
     </style>
 
+    <style name="FormFieldsStyle">
+        <item name="android:padding">@dimen/spacing_small</item>
+        <item name="android:background">@drawable/form_field_background</item>
+    </style>
+
 </resources>

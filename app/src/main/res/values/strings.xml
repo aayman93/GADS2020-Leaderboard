@@ -5,4 +5,9 @@
     <string name="submit_button">Submit</string>
     <string name="learning_badge_description">Learning badge</string>
     <string name="skill_iq_badge_description">skill_iq_badge</string>
+    <string name="project_submission">Project Submission</string>
+    <string name="first_name_hint">First Name</string>
+    <string name="last_name_hint">Last Name</string>
+    <string name="email_address_hint">Email Address</string>
+    <string name="link_to_project_hint">Project on GITHUB (link)</string>
 </resources>

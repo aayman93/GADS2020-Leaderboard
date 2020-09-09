@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.github.aayman93.gadsleaderboard.submission.SubmissionViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:background="@color/primaryDarkColor">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/submission_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_marginTop="@dimen/status_bar_height"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_arrow_back">
+
+            <ImageView
+                android:id="@+id/toolbar_logo"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/gads_logo_description"
+                app:srcCompat="@drawable/gads_toolbar_logo" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/submission_form_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:text="@string/project_submission"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/secondaryLightColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/submission_toolbar" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:background="@drawable/gradient_line"
+            android:paddingStart="@dimen/spacing_normal"
+            android:paddingEnd="@dimen/spacing_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/submission_form_title" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".30" />
+
+        <EditText
+            android:id="@+id/edit_text_first_name"
+            style="@style/FormFieldsStyle"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:layout_marginEnd="@dimen/spacing_small"
+            android:hint="@string/first_name_hint"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:nextFocusDown="@id/edit_text_last_name"
+            android:text="@={viewModel.firstNameContent}"
+            app:layout_constraintBottom_toTopOf="@+id/edit_text_email_address"
+            app:layout_constraintEnd_toStartOf="@+id/edit_text_last_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline"
+            app:layout_constraintVertical_chainStyle="spread_inside" />
+
+        <EditText
+            android:id="@+id/edit_text_last_name"
+            style="@style/FormFieldsStyle"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="@dimen/spacing_normal"
+            android:hint="@string/last_name_hint"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:text="@={viewModel.lastNameContent}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/edit_text_first_name"
+            app:layout_constraintTop_toTopOf="@+id/edit_text_first_name" />
+
+        <EditText
+            android:id="@+id/edit_text_email_address"
+            style="@style/FormFieldsStyle"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:hint="@string/email_address_hint"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            android:text="@={viewModel.emailContent}"
+            app:layout_constraintBottom_toTopOf="@+id/edit_text_link_to_project"
+            app:layout_constraintEnd_toEndOf="@+id/edit_text_last_name"
+            app:layout_constraintStart_toStartOf="@+id/edit_text_first_name"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_first_name" />
+
+        <EditText
+            android:id="@+id/edit_text_link_to_project"
+            style="@style/FormFieldsStyle"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:hint="@string/link_to_project_hint"
+            android:importantForAutofill="no"
+            android:inputType="textUri"
+            android:text="@={viewModel.linkToProjectContent}"
+            app:layout_constraintBottom_toTopOf="@+id/submit_button"
+            app:layout_constraintEnd_toEndOf="@+id/edit_text_email_address"
+            app:layout_constraintStart_toStartOf="@+id/edit_text_email_address"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_email_address" />
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/spacing_large"
+            android:background="@drawable/submit_button_background"
+            android:paddingHorizontal="@dimen/spacing_large"
+            android:text="@string/submit_button"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/guideline2"
+            app:layout_constraintEnd_toEndOf="@+id/edit_text_link_to_project"
+            app:layout_constraintStart_toStartOf="@+id/edit_text_link_to_project"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_link_to_project" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".80" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
