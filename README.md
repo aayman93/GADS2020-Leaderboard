@@ -3,7 +3,7 @@
 ## Description
 
 GADS Leaderboard is a mobile design of the **GADS 2020 Leaderboard**.
-this mobile app displays the Top 20 learners in the Learning Leaders’ category and Top 20 learners in the Skill IQ Leaders’ category and submitts the project to the GADS using Google Forms.
+this mobile app displays the Top 20 learners in the Learning Leaders’ category and Top 20 learners in the Skill IQ Leaders’ category and submits the project to the GADS using Google Forms.
 
 ## Screenshots
 
