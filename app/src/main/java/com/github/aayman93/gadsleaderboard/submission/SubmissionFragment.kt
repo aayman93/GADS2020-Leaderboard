@@ -33,6 +33,13 @@ class SubmissionFragment : Fragment() {
             setNavigationIcon(R.drawable.ic_arrow_back)
         }
 
+        viewModel.navigateToConfirmation.observe(viewLifecycleOwner, {shouldNavigate ->
+            if (shouldNavigate) {
+                findNavController().navigate(R.id.action_submissionFragment_to_confirmationDialogFragment)
+                viewModel.navigationToConfirmationDone()
+            }
+        })
+
         return binding.root
     }
 }

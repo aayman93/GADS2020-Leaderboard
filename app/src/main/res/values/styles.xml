@@ -24,5 +24,9 @@
         <item name="android:padding">@dimen/spacing_small</item>
         <item name="android:background">@drawable/form_field_background</item>
     </style>
+    
+    <style name="DialogTheme" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
 
 </resources>

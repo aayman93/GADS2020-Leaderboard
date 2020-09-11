@@ -22,8 +22,7 @@
             android:layout_marginTop="@dimen/status_bar_height"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:navigationIcon="@drawable/ic_arrow_back">
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/toolbar_logo"
@@ -130,6 +129,7 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/spacing_large"
             android:background="@drawable/submit_button_background"
+            android:onClick="@{() -> viewModel.onSubmitButtonClicked()}"
             android:paddingHorizontal="@dimen/spacing_large"
             android:text="@string/submit_button"
             android:textAllCaps="false"

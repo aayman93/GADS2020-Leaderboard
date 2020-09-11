@@ -8,5 +8,7 @@
     <color name="secondaryDarkColor">#c25e00</color>
     <color name="white">#ffffff</color>
     <color name="grey">#B1B1AC</color>
+    <color name="darkGrey">#818181</color>
+    <color name="lightGrey">#E3E3DF</color>
     <color name="recycler_background_color">#fafafa</color>
 </resources>

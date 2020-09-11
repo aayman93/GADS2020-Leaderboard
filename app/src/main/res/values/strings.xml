@@ -3,6 +3,8 @@
     <string name="gads_logo_description">GADS logo</string>
     <string name="leader_board">Leaderboard</string>
     <string name="submit_button">Submit</string>
+    <string name="learning_leaders_fragment_title">Learning Leaders</string>
+    <string name="skill_iq_fragment_title">Skill IQ Leaders</string>
     <string name="learning_badge_description">Learning badge</string>
     <string name="skill_iq_badge_description">skill_iq_badge</string>
     <string name="project_submission">Project Submission</string>
@@ -10,4 +12,10 @@
     <string name="last_name_hint">Last Name</string>
     <string name="email_address_hint">Email Address</string>
     <string name="link_to_project_hint">Project on GITHUB (link)</string>
+    <string name="close_button_description">Close button</string>
+    <string name="confirmation_message">Are you sure?</string>
+    <string name="confirm_button">Yes</string>
+    <string name="submission_result_description">Submission result</string>
+    <string name="submission_successful">Submission successful</string>
+    <string name="submission_not_successful">Submission not successful</string>
 </resources>

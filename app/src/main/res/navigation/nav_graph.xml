@@ -31,6 +31,37 @@
             android:id="@+id/submissionFragment"
             android:name="com.github.aayman93.gadsleaderboard.submission.SubmissionFragment"
             android:label="SubmissionFragment"
-            tools:layout="@layout/fragment_submission" />
+            tools:layout="@layout/fragment_submission" >
+            <action
+                android:id="@+id/action_submissionFragment_to_confirmationDialogFragment"
+                app:destination="@id/confirmationDialogFragment" />
+        </fragment>
+        <dialog
+            android:id="@+id/confirmationDialogFragment"
+            android:name="com.github.aayman93.gadsleaderboard.submission.ConfirmationDialogFragment"
+            android:label="ConfirmationDialogFragment"
+            tools:layout="@layout/dialog_fragment_confirmation" >
+            <action
+                android:id="@+id/action_confirmationDialogFragment_to_submissionFragment"
+                app:destination="@id/submissionFragment"
+                app:popUpTo="@id/submissionFragment" />
+            <action
+                android:id="@+id/action_confirmationDialogFragment_to_resultDialogFragment"
+                app:destination="@id/resultDialogFragment"
+                app:popUpTo="@id/submissionFragment" />
+        </dialog>
+        <dialog
+            android:id="@+id/resultDialogFragment"
+            android:name="com.github.aayman93.gadsleaderboard.submission.ResultDialogFragment"
+            android:label="ResultDialogFragment"
+            tools:layout="@layout/dialog_fragment_result" >
+            <argument
+                android:name="result"
+                app:argType="boolean" />
+            <action
+                android:id="@+id/action_resultDialogFragment_to_submissionFragment"
+                app:destination="@id/submissionFragment"
+                app:popUpTo="@id/submissionFragment" />
+        </dialog>
     </navigation>
 </navigation>

@@ -25,6 +25,10 @@ class MainViewModel : ViewModel() {
     val skillIqLeaders: LiveData<List<SkillIqLeader>>
         get() = _skillIqLeaders
 
+    private val _navigateToSubmission = MutableLiveData<Boolean>()
+    val navigateToSubmission: LiveData<Boolean>
+        get() = _navigateToSubmission
+
     init {
         getTopLearners()
     }
@@ -46,8 +50,16 @@ class MainViewModel : ViewModel() {
         }
     }
 
+    fun onSubmitToolbarButtonClicked() {
+        _navigateToSubmission.value = true
+    }
+
     fun navigationToLeaderBoardDone() {
         _navigateToLeaderBoard.value = false
+    }
+
+    fun navigationToSubmissionDone() {
+        _navigateToSubmission.value = false
     }
 
 }
